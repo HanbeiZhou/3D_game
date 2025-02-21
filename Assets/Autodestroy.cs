@@ -8,7 +8,7 @@ public class Autodestroy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, delay);
     }
 
     // Update is called once per frame

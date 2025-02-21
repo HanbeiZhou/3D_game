@@ -1,23 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour
 {
     public GameObject prefab;
     public GameObject shootingPoint;
-    private void Start()
+    
+    public void OnFire(InputValue value)
     {
-        
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (value.isPressed)
+        {
             GameObject clone = Instantiate(prefab);
             clone.transform.position = shootingPoint.transform.position;
             clone.transform.rotation = shootingPoint.transform.rotation;
-            
         }
-        
     }
 }
